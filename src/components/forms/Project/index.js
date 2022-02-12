@@ -1,8 +1,8 @@
-export function FormProject({ children }) {
+export function FormProject({ children, classNames }) {
 
   return (
     <>
-      <div className="d-flex w-100">
+      <div className={classNames + " w-100"}>
         {children}
       </div>
     </>

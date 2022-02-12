@@ -1,20 +1,21 @@
 body{
     font-family: Roboto,sans-serif;
-    background-color: #868585!important;
+    background-color: #fafbfc!important;
+    color: #2a2e34;
     margin: 0 auto;
     padding: 0px;
 }
 
 *::-webkit-scrollbar {
-    width: 12px;
+    width: 0px;
+    height:5px
   }
   
   *::-webkit-scrollbar-track {
-    background:  white;        
+    background: rgb(255, 255, 255);       
   }
   
   *::-webkit-scrollbar-thumb {
     background-color: rgb(134, 133, 133);    
     border-radius: 20px;    
-    border: 3px solid rgb(255, 255, 255); 
   }

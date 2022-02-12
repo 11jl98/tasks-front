@@ -26,7 +26,7 @@ export function Home() {
 
   return (
     <>
-      <div className="row">
+      <div className="row container">
         <div className="col-sm-9">
           <div className="d-flex justify-content-end mt-2">
             <span className="badge bg-success me-2">Finalizado</span>
@@ -37,29 +37,19 @@ export function Home() {
             {projects.map((e, index) => {
               const finished = e.endDate ? "bg-success" : "bg-warning"
               return (
-                <div className={"col-sm-4"} key={index}>
-                  <Card classNames="card text-dark bg-light mb-3" title={e.title}>
+                <div className={"col-sm-4"} style={{cursor:"pointer"}} key={index} onClick={()=>window.location.href = `/view/Projetos/${e.id}`}>
+                  <Card classNames="card text-dark bg-light mb-3 shadow-sm  bg-body rounded" title={e.title}>
                     <span className={`position-absolute top-0 start-100 translate-middle p-2 ${finished} rounded-circle`} />
+
                     <div className="card-body">
-                      <p className="card-text">
-                        {String(e.description).substring(0, 20).concat("...")}
-                      </p>
-                    </div>
-                    <div className="card-body">
-                      <div style={{maxHeight:'50px', whiteSpace:'nowrap', overflow: 'hidden', textOverflow: 'ellipsis'}}>
-                        {e.members.map((e) => {
+                      <div style={{ maxHeight: '50px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                        {e.users.map((e) => {
                           return (
-                            <span className="badge bg-primary" style={{ marginRight: 10 }}>
+                            <span key={e.id} className="badge bg-dark" style={{ marginRight: 10 }}>
                               {e.username}
                             </span>
                           )
                         })}
-                      </div>
-
-                      <hr />
-                      <div className="d-flex justify-content-around">
-                      <button type="button" class="btn btn-light btn-sm" >Abrir projeto</button>
-                      <button type="button" class="btn btn-light btn-sm">criar tarefa</button>
                       </div>
                     </div>
                   </Card>

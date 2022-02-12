@@ -10,7 +10,11 @@ const getProjects = async () =>{
   return data
 }
 
+const getProjectById = async (idProject) => {
+  const { data } = await api.get(`/projects/${idProject}`)
+  return data
+}
 
  
 
-export default {save, getProjects}
+export default {save, getProjects, getProjectById}
