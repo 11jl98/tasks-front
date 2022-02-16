@@ -3,33 +3,18 @@ import { useState } from 'react';
 import './style.css'
 
 export function Comment({ name = '', dateComment = '', source = '', styles = {} }) {
-  const [visible, setVisible] = useState(false)
-
   return (
-    <div className="modal-body" style={{ ...styles, border: 'none', borderLeft: '2px solid #dbdcdc', height:'auto'}}>
-      <div className="card" style={{ ...styles, border: 'none', borderLeft: '2px solid #dbdcdc', height:'auto'}}>
-        <div className="d-flex justify-content-between" style={{ backgroundColor: '#ddf4ff', padding: 4 }}>
-          <a style={{ textDecoration: 'none', color: '#2a2e34' }} >{name}</a>
-          {visible && (
-            <span onClick={() => setVisible(false)}>
-              <i className="">Fechar</i>
-            </span>
-          )}
+    <div className="modal-body" style={{ ...styles, border: 'none', borderLeft: '2px solid #dbdcdc', height: 'auto' }}>
+      <div style={{ ...styles, border: 'none', borderLeft: '2px solid #dbdcdc', height: 'auto' }}>
+        <div className="d-flex justify-content-between" >
+          <span style={{ color: '#2a2e34', marginLeft: 5 }} >
+            Atualizado por <a href="/">Matheus</a>
+            <span style={{ marginLeft: 5,color:'#666' }}>({dateComment})</span>
+          </span>
 
-          {!visible && (
-            <span onClick={() => setVisible(true)}>
-              <i className="">Abrir</i>
-            </span>
-          )}
         </div>
-        {visible && (
-          <div className="card-body">
-            <MDEditor.Markdown source={source} />
-          </div>
-        )}
-
-        <div className="card-footer">
-          <span >{dateComment}</span>
+        <div style={{ margin: 10 }}>
+          <MDEditor.Markdown source={source} />
         </div>
       </div>
     </div>

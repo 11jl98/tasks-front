@@ -85,8 +85,8 @@ export function ViewProject() {
 
   return (
     <myContext.Provider value={{ idTaskContext, setTaskContext }}>
-      <div className="d-flex mt-3">
-        <div className="wrapper">
+      <div className="d-flex mt-3" >
+        <div className="wrapper" >
           {users.map((user) =>
             <div key={user.id} className="divUsers" >
               <Card title={user.username.toUpperCase()}>
@@ -110,7 +110,7 @@ export function ViewProject() {
             </div>
             {tasks.filter((task) => (task.user_id === null)).map((task) =>
               <CardMembers key={task.id} classNames="mb-3 shadow" labels={task.labels}>
-                <a>{task.title}</a>
+                <a >{task.title}</a>
                 <hr />
                 <div className="row">
                   <div className="col-sm-8">

@@ -5,4 +5,9 @@ const getLabels = async () => {
   return data
 }
 
-export default {getLabels}
+const saveLabelsTask = async (dataLabelsTask) =>{
+  const data = api.post('labelsTasks', dataLabelsTask)
+  return data
+}
+
+export default {getLabels, saveLabelsTask}
